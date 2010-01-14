@@ -7,6 +7,6 @@ This is the caret positioning code that I created to use in my [Masked Input plu
 
 API
 ---
-* .caret() - gets the current caret position for the first element in the set of matched elements. 
-* .caret(begin,end) - sets the caret position on the set of matched elements.
-* .caret(begin) - sets the caret position on the set of matched elements.  This is the same same calling .caret with the same begin and end value.
+* `.caret()` - gets the current caret position for the first element in the set of matched elements. 
+* `.caret(begin,end)` - sets the caret position on the set of matched elements.
+* `.caret(begin)` - sets the caret position on the set of matched elements.  This is the same same calling .caret with the same begin and end value.
