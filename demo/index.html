@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Caret Demo</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+	<script type="text/javascript" src="../src/jquery.caret.js"></script>
+	<script type="text/javascript">
+		jQuery(function($){
+			setInterval(function(){
+				var caret=$("#demo1").caret();
+				$("#demo1output").html("Begin:"+caret.begin+" End:"+caret.end);
+				
+				var caret2=$("#demo2").caret();
+				$("#demo2output").html("Begin:"+caret2.begin+" End:"+caret2.end);
+				
+			},100);
+			
+			$("#demo3link").click(function(){
+				$("#demo3")
+				.val("caret positioning is easy!")
+				.caret(21,25);
+				return false;
+			});
+			
+			$("#demo4link").click(function(){
+				var caret=$("#demo4").caret();
+				$("#demo4")				
+				.caret(caret.end+1);
+				return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<fieldset>
+		<p>This is a simple test demonstrating the .caret() call with no arguments.</p>
+		<input type="text" id="demo1" />
+		<span>Type and highlight text. The status below will show your cursor position</span>
+		<div id="demo1output"></div>
+	</fieldset>
+	
+	<fieldset>
+		<p>This is a simple test demonstrating the .caret() call with no arguments on a textarea.</p>
+		<textarea id="demo2" rows="2" cols="20"></textarea>
+		
+		<span>Type and highlight text. The status below will show your cursor position</span>
+		<div id="demo2output"></div>
+	</fieldset>
+	
+	<fieldset>
+		<p>This is a simple test demonstrating the .caret(begin,end) call specifying the bgeinning and ending positions.</p>
+		<input type="text" id="demo3" />
+		<a id="demo3link" href="#">Click me</a>		
+	</fieldset>
+	
+	<fieldset>
+		<p>This is a more complex test which retrieves the caret position and then moves it using .caret(pos).</p>
+		<input type="text" id="demo4" value="Some User Input" />
+		<a id="demo4link" href="#">Click me to move the caret right.</a>		
+	</fieldset>
+	
+	
+	
+</body>
+</html>
